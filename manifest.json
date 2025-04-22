@@ -5,5 +5,12 @@
     "manifest_version": 3,
     "action": {
         "default_popup": "popup/index.html"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://osu.ppy.sh/users/*"],
+            "js": ["scripts/main.js"],
+            "run_at": "document_start"
+        }
+    ]
 }
