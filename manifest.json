@@ -1,0 +1,9 @@
+{
+    "name": "BPMap Direct Button",
+    "description": "osu-webでユーザーページのベストパフォーマンスリストにdirectのダウンロードボタンを設置する拡張機能",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup/index.html"
+    }
+}
