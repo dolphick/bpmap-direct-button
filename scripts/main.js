@@ -3,8 +3,16 @@ function appendButton() {
     for (let i=0; i<elements.length; i++) {
         const element = elements[i];
 
-        const detail_element = element.getElementsByClassName('play-detail__title u-ellipsis-overflow')[0];2
-        const beatmap_id = URL.parse(detail_element.attributes['href'].value).pathname.replace('/beatmapsets/', '');
+        const detail_element = element.getElementsByClassName('play-detail__title u-ellipsis-overflow')[0];
+
+        let beatmap_id;
+        const beatmap_url = URL.parse(detail_element.attributes['href'].value);
+        if (beatmap_url.href.indexOf('#')) {
+            beatmap_id = beatmap_url.hash.split('/')[1];
+        }
+        else {
+            beatmap_id = beatmap_url.pathname.replace('/beatmapsets/', '');
+        }
 
         const download_button = document.createElement('a');
         download_button.setAttribute('href', `osu://b/${beatmap_id}`);
